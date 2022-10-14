@@ -85,9 +85,6 @@ Total time elapsed: 3.0m:10.28s
 ## Heritability estimation
 For estimating heritability in admixed populations, you can follow the same command used in original LD score regression. Refer to instructions of original LD score regression : https://github.com/bulik/ldsc/wiki
 
-## Obtaining genetic PCs
-By default, cov-LDSC used scaled PCs output from PLINK (mean 0) for approximating covariate-adjusted LD scores
-
 ## Prerequisites
 1. `Python (3 > version >= 2.7)`
 2. `bitarray: 0.8`
