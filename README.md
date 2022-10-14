@@ -27,6 +27,8 @@ HG00553 HG00553 -0.0465 0.0597 -0.0462 0.0082 -0.0131 0.0067 0.0053 0.0502 -0.15
 When estimating LD scores in an admixed population, one should include the genome-wide PCs  with the flags `--cov`. We recommend to use 20cM for LD window size (`--ld-wind-cm`).
 For computational efficiency, we recommend to split the whole genome to chromosomes and run multiple chromosomes in parallel.
 
+*N.B.* Global PCs used in the LD score adjustment need to be scaled with mean 0. If you are using softwares that output unscaled PCs (e.g. bigsnpr pagckage), you would need to scale them first.
+
 ## Demo
 We used 1000 Genome Project Phase III Admixed American (AMR) chromosome 21 data as an example. We provide a pre-generated 10PC file on `.example/AMR_chr21/AMR.evec`. To get cov-adjusted LD scores, run the following command:
 ```
@@ -82,6 +84,9 @@ Total time elapsed: 3.0m:10.28s
 
 ## Heritability estimation
 For estimating heritability in admixed populations, you can follow the same command used in original LD score regression. Refer to instructions of original LD score regression : https://github.com/bulik/ldsc/wiki
+
+## Obtaining genetic PCs
+By default, cov-LDSC used scaled PCs output from PLINK (mean 0) for approximating covariate-adjusted LD scores
 
 ## Prerequisites
 1. `Python (3 > version >= 2.7)`
